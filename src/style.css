@@ -1,0 +1,53 @@
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("./assets/fonts/CascadiaCode.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SofiaSans";
+  src: url("https://fonts.googleapis.com/css2?family=Sofia+Sans:ital@1&display=swap") format("truetype");
+}
+
+body {
+  background-image: url("./assets/images/leaves.png");
+}
+
+div.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  color: rgb(20, 93, 189);
+}
+
+div.container div:nth-child(1) {
+  grid-column-start: span 2;
+  text-align: center;
+}
+
+h1 {
+  font-family: "MyCustomFont", sans-serif;
+  margin-bottom: 0;
+}
+
+div.container div:nth-child(1) img {
+  width: 500px;
+}
+
+h2:nth-of-type(1) {
+  font-family: "MyCustomFont", sans-serif;
+  text-align: center;
+}
+
+h2:nth-of-type(2) {
+  font-family: "SofiaSans", sans-serif;
+  font-style: italic;
+  text-align: center;
+}
+
+div.gaia {
+  grid-column-start: span 2;
+  text-align: center;
+}
+
+div.gaia img {
+  width: 100px;
+}
