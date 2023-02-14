@@ -1,9 +1,94 @@
 @font-face {
-  font-family: "MyCustomFont";
-  src: url("./assets/fonts/CascadiaCode.ttf") format("truetype");
+  font-family: "Roboto";
+  src: url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap")
+    format("truetype");
 }
 
 @font-face {
-  font-family: "SofiaSans";
-  src: url("https://fonts.googleapis.com/css2?family=Sofia+Sans:ital@1&display=swap") format("truetype");
+  font-family: "Roboto Condensed";
+  src: url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap")
+    format("truetype");
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  outline: none;
+  border: 1px solid red;
+}
+
+body {
+  min-height: 100vh;
+}
+
+header {
+  background-color: #78081c;
+  width: 100%;
+}
+
+header nav {
+  padding: 0 20px 0 20px;
+}
+
+header nav ul.nav-item {
+  list-style-type: none;
+  display: flex;
+}
+
+header nav ul.nav-item li.nav-item {
+  padding: 10px;
+}
+
+header nav ul.nav-item li.nav-item img.nav-item {
+  width: 180px;
+}
+
+header nav ul.nav-item li.nav-item a.nav-item {
+  color: #fff;
+  font-family: "Roboto Condensed" sans-serif;
+  font-size: 1.3rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   Desktop                                  */
+/* -------------------------------------------------------------------------- */
+
+@media only screen and (min-width: 768px) {
+  header nav ul.nav-item {
+    justify-content: space-between;
+  }
+
+  header nav ul.nav-item div.nav-item {
+    display: flex;
+  }
+
+  header nav ul.nav-item li.nav-item a.nav-item {
+    font-size: 1.5rem;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   Mobile                                   */
+/* -------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 767px) {
+  header nav {
+    padding: 0 5px 0 5px;
+  }
+
+  header nav ul.nav-item {
+    justify-content: space-between;
+  }
+
+  header nav ul.nav-item div.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header nav ul.nav-item li.nav-item a.nav-item {
+    font-size: 1.2rem;
+  }
 }
