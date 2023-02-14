@@ -1,13 +1,11 @@
 @font-face {
   font-family: "Roboto";
-  src: url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap")
-    format("truetype");
+  src: url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap") format("truetype");
 }
 
 @font-face {
   font-family: "Roboto Condensed";
-  src: url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap")
-    format("truetype");
+  src: url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap") format("truetype");
 }
 
 * {
@@ -47,13 +45,34 @@ header nav ul.nav-item li.nav-item img.nav-item {
 
 header nav ul.nav-item li.nav-item a.nav-item {
   color: #fff;
-  font-family: "Roboto Condensed" sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   font-size: 1.3rem;
 }
 
-/* -------------------------------------------------------------------------- */
-/*                                   Desktop                                  */
-/* -------------------------------------------------------------------------- */
+#footer {
+  background-color: #78081c;
+  color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-logo-img {
+  height: 5rem;
+  width: 10rem;
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+}
+
+/* Desktop */
 
 @media only screen and (min-width: 768px) {
   header nav ul.nav-item {
@@ -69,9 +88,7 @@ header nav ul.nav-item li.nav-item a.nav-item {
   }
 }
 
-/* -------------------------------------------------------------------------- */
-/*                                   Mobile                                   */
-/* -------------------------------------------------------------------------- */
+/* Mobile */
 
 @media only screen and (max-width: 767px) {
   header nav {
