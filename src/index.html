@@ -4,20 +4,55 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Retro watchers</title>
   </head>
   <body>
     <div class="container">
-      <div>
-        <h1>WebPack 5 Template</h1>
-        <img src="./assets/images/webpacklogo.png" alt="" />
-      </div>
-      <h2>Local Font Cascadia</h2>
-      <h2>Google Font Sofia Sans Italic</h2>
-      <div class="gaia">
-        <img id="gaia" src="./assets/images/gaia.png" alt="" />
-        <p>Github Repo <a href="https://github.com/chelobotix/Webpack-template">here</a> by Chelobotix</p>
-      </div>
+      <header id="header">
+        <nav>
+          <ul class="nav-item">
+            <li class="nav-item logo">
+              <a href="index.html"><img class="nav-item" src="./assets/images/retro-logo.png" alt="logo-image" /></a>
+            </li>
+            <div class="nav-item">
+              <li class="nav-item">
+                <a class="nav-item" href="#">Today's Movie</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item" href="#">Category</a>
+              </li>
+            </div>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <section class="search">
+          <form class="search" action="">
+            <input type="text" name="name" placeholder="Enter a Movie.." required />
+            <select id="selectCategory" name="selectCategory" required>
+              <option value="0">Select Category:</option>
+              <option value="28">Action</option>
+              <option value="12">Adventure</option>
+              <option value="16">Animation</option>
+              <option value="35">Comedy</option>
+              <option value="18">Drama</option>
+              <option value="27">Horror</option>
+              <option value="10749">Romance</option>
+              <option value="878">Science Fiction</option>
+            </select>
+            <input type="image" src="./assets/images/search.png" />
+          </form>
+        </section>
+
+        <section class="movie"></section>
+      </main>
+      <footer>
+        <div class="footer-logo"></div>
+        <div class="copyright">
+          <p>©️ 2023 Key. This project is MIT Licensed | Built by Feven Seyfu and Marcelo Alarcon</p>
+        </div>
+      </footer>
     </div>
   </body>
 </html>
