@@ -30,7 +30,7 @@ window.commentPupupHandler = async (id) => {
   
   getSingleMovie(id).then((data) => {
     document.getElementById("popup-details").innerHTML = `
-    <button onclick="closePopup()">x</button>
+    <button class="close-popup-btn" onclick="closePopup()">x</button>
     <div class="popup-contents">
       <div class="popup-comment">
         <img class="popup-img" src="https://image.tmdb.org/t/p/w300/${data.poster_path}" alt="">
