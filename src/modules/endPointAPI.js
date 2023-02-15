@@ -14,8 +14,6 @@ const getSingleMovie = async (id) => {
   return singleMovie;
 }
 
-export { getMovieList, getSingleMovie };
-export { getMovieList, setLike, getLike };
 
 const setLike = async (movieId) => {
   const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${siteId}/likes/`;
@@ -37,4 +35,6 @@ const getLike = async () => {
   return likeCounter;
 };
 
+
+export { getMovieList, setLike, getLike };
 
