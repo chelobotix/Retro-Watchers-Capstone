@@ -1,9 +1,6 @@
-import { getSingleMovie } from "./endPointAPI";
 
-window.commentPupupHandler = async (id) => {
+const commentPupupHandler = async (data) => {
     document.getElementById("popup").style.display = "block";
-    
-    getSingleMovie(id).then((data) => {
       document.getElementById("popup-details").innerHTML = `
       <button class="close-popup-btn" onclick="closePopup()">x</button>
       <div class="popup-contents">
@@ -16,10 +13,11 @@ window.commentPupupHandler = async (id) => {
           </div>
         </div>
       </div>`;
-    });
   };
-  
+
+
   window.closePopup = () => {
     document.getElementById("popup").style.display = "none";
   };
   
+export default commentPupupHandler

@@ -36,5 +36,5 @@ const getLike = async () => {
 };
 
 
-export { getMovieList, setLike, getLike };
+export { getMovieList, setLike, getLike, getSingleMovie };
 
