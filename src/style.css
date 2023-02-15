@@ -133,6 +133,18 @@ main section.movie div.movie img.movie {
 }
 
 
+main section.movie div.movie div.button-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0 5px 0;
+}
+
+main section.movie div.movie div.button-container p.like-counter {
+  justify-self: end;
+}
+
 footer {
   background-color: #78081c;
   color: white;
