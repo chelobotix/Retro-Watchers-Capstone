@@ -1,11 +1,13 @@
 @font-face {
   font-family: "Roboto";
-  src: url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap") format("truetype");
+  src: url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap")
+    format("truetype");
 }
 
 @font-face {
   font-family: "Roboto Condensed";
-  src: url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap") format("truetype");
+  src: url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap")
+    format("truetype");
 }
 
 * {
@@ -13,8 +15,6 @@
   padding: 0;
   margin: 0;
   font-family: "Roboto", sans-serif;
-  outline: none;
-  border: 1px solid red;
 }
 
 body {
@@ -49,12 +49,70 @@ header nav ul.nav-item li.nav-item a.nav-item {
   font-size: 1.3rem;
 }
 
-#footer {
+main {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+main section.search {
+  display: flex;
+  justify-content: center;
+}
+
+main section.search form.search {
+  display: flex;
+  background-color: #78081c;
+  border: 2px solid #78081c;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+main section.search form.search input[type="text"] {
+  border: none;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  width: 400px;
+  padding: 10px 0 10px 0;
+}
+
+main section.search form.search select {
+  border: none;
+  background-color: #78081c;
+  color: #fff;
+  font-size: 1rem;
+  padding: 10px 0 10px 0;
+}
+
+main section.movie {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+main section.movie div.movie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  -webkit-box-shadow: 5px 5px 10px 5px #000;
+  box-shadow: 5px 5px 10px 5px #000;
+}
+
+main section.movie div.movie img.movie {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+footer {
   background-color: #78081c;
   color: white;
   width: 100%;
   display: flex;
   flex-direction: column;
+  padding-top: 20px;
 }
 
 .footer-logo {

@@ -12,7 +12,7 @@
         <nav>
           <ul class="nav-item">
             <li class="nav-item logo">
-              <img class="nav-item" src="./assets/images/retro-logo.png" alt="logo-image" />
+              <a href="index.html"><img class="nav-item" src="./assets/images/retro-logo.png" alt="logo-image" /></a>
             </li>
             <div class="nav-item">
               <li class="nav-item">
@@ -26,8 +26,28 @@
         </nav>
       </header>
 
-      <main class="main-section"></main>
-      <footer id="footer">
+      <main>
+        <section class="search">
+          <form class="search" action="">
+            <input type="text" name="name" placeholder="Enter a Movie.." required />
+            <select id="selectCategory" name="selectCategory" required>
+              <option value="0">Select Category:</option>
+              <option value="28">Action</option>
+              <option value="12">Adventure</option>
+              <option value="16">Animation</option>
+              <option value="35">Comedy</option>
+              <option value="18">Drama</option>
+              <option value="27">Horror</option>
+              <option value="10749">Romance</option>
+              <option value="878">Science Fiction</option>
+            </select>
+            <input type="image" src="./assets/images/search.png" />
+          </form>
+        </section>
+
+        <section class="movie"></section>
+      </main>
+      <footer>
         <div class="footer-logo"></div>
         <div class="copyright">
           <p>©️ 2023 Key. This project is MIT Licensed | Built by Feven Seyfu and Marcelo Alarcon</p>
