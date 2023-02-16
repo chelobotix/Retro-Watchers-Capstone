@@ -11,8 +11,8 @@ const displayComment = (comments) => {
 };
 
 const commentPupupHandler = async (data) => {
-  document.getElementById("popup").style.display = "block";
-  document.getElementById("popup-details").innerHTML = `
+  document.getElementById('popup').style.display = 'block';
+  document.getElementById('popup-details').innerHTML = `
       <button class="close-popup-btn" onclick="closePopup()">x</button>
       <div class="popup-contents">
         <div class="popup-comment">
@@ -39,7 +39,7 @@ const commentPupupHandler = async (data) => {
 };
 
 window.closePopup = () => {
-  document.getElementById("popup").style.display = "none";
+  document.getElementById('popup').style.display = 'none';
 };
 
 const addComment = async (id) => {

@@ -31,6 +31,7 @@ const setComments = async (comments) => {
     },
     body: JSON.stringify(comments)
   });
+  return comments;
 };
 
 const setLike = async (movieId) => {

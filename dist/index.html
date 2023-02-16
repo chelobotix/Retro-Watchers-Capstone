@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Retro watchers</title>
   <script defer src="main.js"></script></head>
+
   <body>
     <div class="container">
       <header id="header">
@@ -28,10 +29,9 @@
 
       <main>
         <section class="search">
-          <form class="search" action="">
-            <input type="text" name="name" placeholder="Enter a Movie.." required />
+          <form class="search" action="#">
             <select id="selectCategory" name="selectCategory" required>
-              <option value="0">Select Category:</option>
+              <option value="0">All Categories</option>
               <option value="28">Action</option>
               <option value="12">Adventure</option>
               <option value="16">Animation</option>
@@ -45,8 +45,20 @@
           </form>
         </section>
 
+        <section class="counter">
+          <h1></h1>
+        </section>
+
         <section class="movie"></section>
       </main>
+
+      <!-- popup section -->
+      <section class="popup" id="popup">
+        <div class="popup-details" id="popup-details">
+          <!-- popup data here come dynamically -->
+        </div>
+      </section>
+
       <footer>
         <div class="footer-logo"></div>
         <div class="copyright">
