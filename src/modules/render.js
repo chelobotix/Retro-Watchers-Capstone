@@ -1,13 +1,11 @@
 import heart from '../assets/images/heart.png';
 import moreInfo from '../assets/images/more-info.png';
 import {
-  getComments,
   getLike,
   getMovieList,
-  getSingleMovie,
-  setLike,
+  getSingleMovie, setLike,
 } from './endPointAPI.js';
-import { commentPupupHandler, displayComment } from './popup-comments';
+import { commentPupupHandler } from './popup-comments';
 
 const updateLike = (movieId) => {
   getLike().then((response) => {
