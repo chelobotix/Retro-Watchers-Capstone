@@ -1,13 +1,13 @@
-import { getComments, setComments } from "./endPointAPI";
+import { getComments, setComments } from './endPointAPI.js';
 
 const displayComment = (comments) => {
-  let aux = "";
+  let aux = '';
   comments.forEach((comment) => {
     aux += `
       <p>${comment.creation_date} ${comment.username} : ${comment.comment}</p>
     `;
   });
-  document.querySelector(".comments").innerHTML = aux;
+  document.querySelector('.comments').innerHTML = aux;
 };
 
 const commentPupupHandler = async (data) => {
@@ -46,20 +46,20 @@ const addComment = async (id) => {
   getComments(id).then((comments) => {
     displayComment(comments);
   });
-  document.querySelector("#form").addEventListener("submit", async (e) => {
+  document.querySelector('#form').addEventListener('submit', async (e) => {
     e.preventDefault();
-    let username = document.querySelector('input[name="username').value;
-    let comment = document.querySelector('input[name="comment').value;
-    let comments = {
+    const username = document.querySelector('input[name="username').value;
+    const comment = document.querySelector('input[name="comment').value;
+    const comments = {
       item_id: id,
-      username: username,
-      comment: comment,
+      username,
+      comment,
     };
 
     await setComments(comments);
 
-    document.querySelector('input[name="username').value = "";
-    document.querySelector('input[name="comment').value = "";
+    document.querySelector('input[name="username').value = '';
+    document.querySelector('input[name="comment').value = '';
 
     getComments(id).then((comments) => {
       displayComment(comments);
@@ -68,4 +68,3 @@ const addComment = async (id) => {
 };
 
 export { commentPupupHandler };
-
