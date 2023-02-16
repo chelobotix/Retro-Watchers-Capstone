@@ -10,6 +10,10 @@ const commentPupupHandler = async (data) => {
             <p>popularity : ${data.popularity}</p>
             <p>language: ${data.original_language}</p>
           </div>
+          <div class="display-comments">
+            <h3>Comments(2)</h3>
+            <div class="comments"></div>
+          </div>
         </div>
       </div>`;
 };
@@ -18,4 +22,14 @@ window.closePopup = () => {
   document.getElementById('popup').style.display = 'none';
 };
 
-export default commentPupupHandler;
+const displayComment = (comments) => {
+  let aux = '';
+  comments.forEach((comment) => {
+    aux += `
+      <p>${comment.creation_date} ${comment.username} : ${comment.comment}</p>
+    `;
+  });
+  document.querySelector('.comments').innerHTML = aux;
+};
+
+export { commentPupupHandler, displayComment };

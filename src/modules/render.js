@@ -1,10 +1,13 @@
 import heart from '../assets/images/heart.png';
 import moreInfo from '../assets/images/more-info.png';
 import {
+  getComments,
   getLike,
-  getMovieList, getSingleMovie, setLike,
+  getMovieList,
+  getSingleMovie,
+  setLike,
 } from './endPointAPI.js';
-import commentPupupHandler from './popup-comments.js';
+import { commentPupupHandler, displayComment } from './popup-comments';
 
 const updateLike = (movieId) => {
   getLike().then((response) => {
@@ -60,13 +63,17 @@ const renderMovie = (movieList, category = 0) => {
       getSingleMovie(movie.id).then((data) => {
         commentPupupHandler(data);
       });
+
+      getComments().then((comments) => {
+        displayComment(comments);
+      });
     });
   });
 };
 
 const sortByCategory = () => {
-  document.querySelector('')
-}
+  document.querySelector('');
+};
 
 const renderMovieList = () => {
   getMovieList().then((response) => {

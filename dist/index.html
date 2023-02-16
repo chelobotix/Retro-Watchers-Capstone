@@ -1,70 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retro watchers</title>
+  <script defer src="main.js"></script></head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Retro watchers</title>
-<script defer src="main.js"></script></head>
-
-<body>
-  <div class="container">
-    <header id="header">
-      <nav>
-        <ul class="nav-item">
-          <li class="nav-item logo">
-            <a href="index.html"><img class="nav-item" src="images/retro-logo-ec601c03a16fa30a64f1.png" alt="logo-image" /></a>
-          </li>
-          <div class="nav-item">
-            <li class="nav-item">
-              <a class="nav-item" href="#">Today's Movie</a>
+  <body>
+    <div class="container">
+      <header id="header">
+        <nav>
+          <ul class="nav-item">
+            <li class="nav-item logo">
+              <a href="index.html"><img class="nav-item" src="images/retro-logo-ec601c03a16fa30a64f1.png" alt="logo-image" /></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-item" href="#">Category</a>
-            </li>
-          </div>
-        </ul>
-      </nav>
-    </header>
+            <div class="nav-item">
+              <li class="nav-item">
+                <a class="nav-item" href="#">Today's Movie</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item" href="#">Category</a>
+              </li>
+            </div>
+          </ul>
+        </nav>
+      </header>
 
-    <main>
-      <section class="search">
-        <form class="search" action="">
-          <input type="text" name="name" placeholder="Enter a Movie.." required />
-          <select id="selectCategory" name="selectCategory" required>
-            <option value="0">Select Category:</option>
-            <option value="28">Action</option>
-            <option value="12">Adventure</option>
-            <option value="16">Animation</option>
-            <option value="35">Comedy</option>
-            <option value="18">Drama</option>
-            <option value="27">Horror</option>
-            <option value="10749">Romance</option>
-            <option value="878">Science Fiction</option>
-          </select>
-          <input type="image" src="images/search-840bef0713d899d3f29d.png" />
-        </form>
+      <main>
+        <section class="search">
+          <form class="search" action="#" method="get">
+            <input type="text" name="name" placeholder="Enter a Movie..." />
+            <select id="selectCategory" name="selectCategory" required>
+              <option value="0">Select Category:</option>
+              <option value="28">Action</option>
+              <option value="12">Adventure</option>
+              <option value="16">Animation</option>
+              <option value="35">Comedy</option>
+              <option value="18">Drama</option>
+              <option value="27">Horror</option>
+              <option value="10749">Romance</option>
+              <option value="878">Science Fiction</option>
+            </select>
+            <input type="image" src="images/search-840bef0713d899d3f29d.png" />
+          </form>
+        </section>
+
+        <section class="movie"></section>
+      </main>
+
+      <!-- popup section -->
+      <section class="popup" id="popup">
+        <div class="popup-details" id="popup-details">
+          <!-- popup data here come dynamically -->
+        </div>
       </section>
 
-      <section class="movie"></section>
-    </main>
-
-    <!-- popup section -->
-    <section class="popup" id="popup">
-      <div class="popup-details" id="popup-details">
-        <!-- popup data here come dynamically -->
-      </div>
-
-    </section>
-
-    <footer>
-      <div class="footer-logo"></div>
-      <div class="copyright">
-        <p>©️ 2023 Key. This project is MIT Licensed | Built by Feven Seyfu and Marcelo Alarcon</p>
-      </div>
-    </footer>
-  </div>
-</body>
-
+      <footer>
+        <div class="footer-logo"></div>
+        <div class="copyright">
+          <p>©️ 2023 Key. This project is MIT Licensed | Built by Feven Seyfu and Marcelo Alarcon</p>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>
