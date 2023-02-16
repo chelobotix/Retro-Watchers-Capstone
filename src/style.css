@@ -1,13 +1,11 @@
 @font-face {
   font-family: "Roboto";
-  src: url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap")
-    format("truetype");
+  src: url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap") format("truetype");
 }
 
 @font-face {
   font-family: "Roboto Condensed";
-  src: url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap")
-    format("truetype");
+  src: url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap") format("truetype");
 }
 
 * {
@@ -105,6 +103,35 @@ main section.movie div.movie img.movie {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
+
+/* display popup comments */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  background-color: white;
+  width: 80%;
+  height: 80%;
+}
+
+.popup-contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-details {
+  padding: 20px;
+}
+
+.popup-details button {
+  float: right;
+  padding: 5px;
+}
+
 
 main section.movie div.movie div.button-container {
   width: 90%;

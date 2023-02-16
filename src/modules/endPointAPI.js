@@ -7,6 +7,14 @@ const getMovieList = async () => {
   return movieList;
 };
 
+const getSingleMovie = async (id) => {
+  const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`;
+  const response = await fetch(url);
+  const singleMovie = await response.json();
+  return singleMovie;
+}
+
+
 const setLike = async (movieId) => {
   const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${siteId}/likes/`;
   await fetch(url, {
@@ -27,4 +35,6 @@ const getLike = async () => {
   return likeCounter;
 };
 
-export { getMovieList, setLike, getLike };
+
+export { getMovieList, setLike, getLike, getSingleMovie };
+
