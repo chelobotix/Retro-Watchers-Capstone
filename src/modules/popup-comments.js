@@ -1,7 +1,6 @@
-
 const commentPupupHandler = async (data) => {
-    document.getElementById("popup").style.display = "block";
-      document.getElementById("popup-details").innerHTML = `
+  document.getElementById('popup').style.display = 'block';
+  document.getElementById('popup-details').innerHTML = `
       <button class="close-popup-btn" onclick="closePopup()">x</button>
       <div class="popup-contents">
         <div class="popup-comment">
@@ -13,11 +12,10 @@ const commentPupupHandler = async (data) => {
           </div>
         </div>
       </div>`;
-  };
+};
 
+window.closePopup = () => {
+  document.getElementById('popup').style.display = 'none';
+};
 
-  window.closePopup = () => {
-    document.getElementById("popup").style.display = "none";
-  };
-  
-export default commentPupupHandler
+export default commentPupupHandler;

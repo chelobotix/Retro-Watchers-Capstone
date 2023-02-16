@@ -1,11 +1,13 @@
 @font-face {
   font-family: "Roboto";
-  src: url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap") format("truetype");
+  src: url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap")
+    format("truetype");
 }
 
 @font-face {
   font-family: "Roboto Condensed";
-  src: url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap") format("truetype");
+  src: url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap")
+    format("truetype");
 }
 
 * {
@@ -55,6 +57,7 @@ main {
 main section.search {
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 main section.search form.search {
@@ -69,8 +72,16 @@ main section.search form.search input[type="text"] {
   border: none;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   width: 400px;
   padding: 10px 0 10px 0;
+}
+
+main section.search form.search input[type="text"]::placeholder {
+  padding-left: 10px;
+  color: #78081c;
+  font-size: 1rem;
 }
 
 main section.search form.search select {
@@ -79,6 +90,10 @@ main section.search form.search select {
   color: #fff;
   font-size: 1rem;
   padding: 10px 0 10px 0;
+}
+
+main section.search form.search input[type="image"] {
+  padding: 5px;
 }
 
 main section.movie {
@@ -131,7 +146,6 @@ main section.movie div.movie img.movie {
   float: right;
   padding: 5px;
 }
-
 
 main section.movie div.movie div.button-container {
   width: 90%;

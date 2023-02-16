@@ -1,10 +1,10 @@
-import heart from "../assets/images/heart.png";
-import moreInfo from "../assets/images/more-info.png";
+import heart from '../assets/images/heart.png';
+import moreInfo from '../assets/images/more-info.png';
 import {
   getLike,
-  getMovieList, getSingleMovie, setLike
-} from "./endPointAPI.js";
-import commentPupupHandler from './popup-comments';
+  getMovieList, getSingleMovie, setLike,
+} from './endPointAPI.js';
+import commentPupupHandler from './popup-comments.js';
 
 const updateLike = (movieId) => {
   getLike().then((response) => {
@@ -17,8 +17,8 @@ const updateLike = (movieId) => {
 };
 
 const addLike = () => {
-  document.querySelectorAll(".btn-like").forEach((movie) => {
-    movie.addEventListener("click", () => {
+  document.querySelectorAll('.btn-like').forEach((movie) => {
+    movie.addEventListener('click', () => {
       const movieId = movie.id.slice(4);
       setLike(movieId).then(() => {
         updateLike(movieId);
@@ -27,10 +27,14 @@ const addLike = () => {
   });
 };
 
-const renderMovie = (movieList) => {
-  document.querySelector("section.movie");
-  let aux = "";
-  movieList.forEach((movie) => {
+const renderMovie = (movieList, category = 0) => {
+  document.querySelector('section.movie');
+  let aux = '';
+  let categoryArray = movieList;
+  if (category !== 0) {
+    categoryArray = movieList.filter((movie) => movie.genre_ids.includes(category));
+  }
+  categoryArray.forEach((movie) => {
     aux += `<div class="movie">
             <img class="movie" src="https://image.tmdb.org/t/p/w300/${movie.poster_path}" alt="">
             <div class="button-container">
@@ -43,17 +47,16 @@ const renderMovie = (movieList) => {
 
   getLike().then((response) => {
     response.forEach((like) => {
-      document.querySelector(`#counter${like.item_id}`).textContent =
-        like.likes;
+      document.querySelector(`#counter${like.item_id}`).textContent = like.likes;
     });
   });
 
-  document.querySelector("section.movie").innerHTML = aux;
+  document.querySelector('section.movie').innerHTML = aux;
   addLike();
-  
-  document.querySelectorAll(".btn-more-info").forEach((movie) => {
-    document.getElementById("popup").style.display = "none";
-    movie.addEventListener("click", () => {
+
+  document.querySelectorAll('.btn-more-info').forEach((movie) => {
+    document.getElementById('popup').style.display = 'none';
+    movie.addEventListener('click', () => {
       getSingleMovie(movie.id).then((data) => {
         commentPupupHandler(data);
       });
@@ -61,9 +64,14 @@ const renderMovie = (movieList) => {
   });
 };
 
+const sortByCategory = () => {
+  document.querySelector('')
+}
+
 const renderMovieList = () => {
   getMovieList().then((response) => {
-    renderMovie(response.items);
+    renderMovie(response.items, 10749);
+    sortByCategory();
   });
 };
 
