@@ -1,10 +1,13 @@
 import heart from "../assets/images/heart.png";
 import moreInfo from "../assets/images/more-info.png";
 import {
+  getComments,
   getLike,
-  getMovieList, getSingleMovie, setLike
+  getMovieList,
+  getSingleMovie,
+  setLike
 } from "./endPointAPI.js";
-import commentPupupHandler from './popup-comments';
+import { commentPupupHandler, displayComment } from "./popup-comments";
 
 const updateLike = (movieId) => {
   getLike().then((response) => {
@@ -50,15 +53,20 @@ const renderMovie = (movieList) => {
 
   document.querySelector("section.movie").innerHTML = aux;
   addLike();
-  
+
   document.querySelectorAll(".btn-more-info").forEach((movie) => {
     document.getElementById("popup").style.display = "none";
     movie.addEventListener("click", () => {
       getSingleMovie(movie.id).then((data) => {
         commentPupupHandler(data);
       });
+
+      getComments().then((comments) => {
+          displayComment(comments);
+      });
     });
   });
+
 };
 
 const renderMovieList = () => {
