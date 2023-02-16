@@ -96,27 +96,17 @@ main section.search form.search input[type="image"] {
   padding: 5px;
 }
 
-main section.movie {
-  width: 100%;
+main section.counter {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 50px;
+  margin-bottom: 20px;
 }
 
-main section.movie div.movie {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  -webkit-box-shadow: 5px 5px 10px 5px #000;
-  box-shadow: 5px 5px 10px 5px #000;
-}
-
-main section.movie div.movie img.movie {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+main section.counter h1 {
+  background-color: #0f4c5c;
+  color: #fb8b24;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 /* display popup comments */
@@ -148,16 +138,60 @@ main section.movie div.movie img.movie {
   padding: 5px;
 }
 
+main section.movie {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+main section.movie div.movie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  -webkit-box-shadow: 5px 5px 10px 5px #000;
+  box-shadow: 5px 5px 10px 5px #000;
+}
+
+main section.movie div.movie:hover {
+  -webkit-box-shadow: 5px 5px 10px 5px #78081c;
+  box-shadow: 5px 5px 10px 5px #78081c;
+}
+
+main section.movie div.movie img.movie {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
 main section.movie div.movie div.button-container {
-  width: 90%;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 0 5px 0;
+  padding: 5px 25px 5px 25px;
+  background-color: #78081c;
 }
 
 main section.movie div.movie div.button-container p.like-counter {
-  justify-self: end;
+  margin-left: auto;
+  margin-right: 5px;
+  color: #fff;
+  font-weight: bold;
+}
+
+main section.movie div.movie div.button-container img.btn-more-info,
+main section.movie div.movie div.button-container img.btn-like {
+  transition: all 0.4s ease-in-out;
+}
+
+main section.movie div.movie div.button-container img.btn-more-info:hover,
+main section.movie div.movie div.button-container img.btn-like:hover {
+  transform: scale(1.2);
+  cursor: pointer;
 }
 
 footer {

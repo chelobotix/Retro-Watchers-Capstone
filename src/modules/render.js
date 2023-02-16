@@ -31,7 +31,9 @@ const addLike = () => {
 };
 
 const renderMovie = (movieList, category = 0) => {
-  document.querySelector('section.movie');
+  category = parseInt(category, 10);
+  const sectionMovie = document.querySelector('section.movie');
+  sectionMovie.innerHTML = '';
   let aux = '';
   let categoryArray = movieList;
   if (category !== 0) {
@@ -49,12 +51,19 @@ const renderMovie = (movieList, category = 0) => {
   });
 
   getLike().then((response) => {
-    response.forEach((like) => {
-      document.querySelector(`#counter${like.item_id}`).textContent = like.likes;
+    let counter = 0;
+    document.querySelectorAll('.btn-like').forEach((btnLike) => {
+      counter += 1;
+      response.forEach((like) => {
+        if (btnLike.id.slice(4) === like.item_id) {
+          document.querySelector(`#counter${like.item_id}`).textContent = like.likes;
+        }
+      });
     });
+    document.querySelector('h1').textContent = `📽️ ${counter} Retro Movies Found 😁`;
   });
 
-  document.querySelector('section.movie').innerHTML = aux;
+  sectionMovie.innerHTML = aux;
   addLike();
 
   document.querySelectorAll('.btn-more-info').forEach((movie) => {
@@ -72,12 +81,19 @@ const renderMovie = (movieList, category = 0) => {
 };
 
 const sortByCategory = () => {
-  document.querySelector('');
+  const formSearch = document.querySelector('form.search');
+  formSearch.addEventListener('submit', (e) => {
+    console.log(formSearch.elements.selectCategory.value);
+    e.preventDefault();
+    getMovieList().then((response) => {
+      renderMovie(response.items, formSearch.elements.selectCategory.value);
+    });
+  });
 };
 
 const renderMovieList = () => {
   getMovieList().then((response) => {
-    renderMovie(response.items, 10749);
+    renderMovie(response.items);
     sortByCategory();
   });
 };
