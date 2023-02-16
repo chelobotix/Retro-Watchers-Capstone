@@ -114,6 +114,7 @@ main section.movie div.movie img.movie {
   background-color: white;
   width: 80%;
   height: 80%;
+  overflow-y: scroll;
 }
 
 .popup-contents {
