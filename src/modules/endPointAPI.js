@@ -1,4 +1,4 @@
-import { apiKey, siteId } from './apiKey.js';
+import { apiKey, siteId } from "./apiKey.js";
 
 const getMovieList = async () => {
   const url = `https://api.themoviedb.org/3/list/8240326?api_key=${apiKey}&language=en-US`;
@@ -12,25 +12,36 @@ const getSingleMovie = async (id) => {
   const response = await fetch(url);
   const singleMovie = await response.json();
   return singleMovie;
-}
+};
 
-const getComments = async () => {
-  const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${siteId}/comments?item_id=item1`;
+const getComments = async (id) => {
+  const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${siteId}/comments?item_id=${id}`;
   const response = await fetch(url);
   const comments = await response.json();
-  return comments
-}
+  return comments;
+};
+
+const setComments = async (comments) => {
+  const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${siteId}/comments`;
+  await fetch(url, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(comments)
+  });
+};
 
 const setLike = async (movieId) => {
   const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${siteId}/likes/`;
   await fetch(url, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
+      Accept: "application/json",
+      "Content-Type": "application/json",
     },
-    body:
-      JSON.stringify({ item_id: movieId }),
+    body: JSON.stringify({ item_id: movieId }),
   });
 };
 
@@ -41,6 +52,5 @@ const getLike = async () => {
   return likeCounter;
 };
 
-
-export { getMovieList, setLike, getLike, getSingleMovie, getComments };
+export { getMovieList, setLike, getLike, getSingleMovie, getComments, setComments };
 
