@@ -1,10 +1,11 @@
 # Javascript Capstone Project with Kanban Board
 
 <div align="center">
-  <img  src="./src/assets/images/CapstoneLogo.png" alt="logo" width="1080"  height="auto" />
+  <img  src="https://user-images.githubusercontent.com/73704727/219734782-d4ff2c5f-a431-4894-b7f8-9f92f5b1bc65.png" alt="logo" width="1080"  height="auto" />
   <br/>
 
-  <h3><b>Javascript Capstone Project</b></h3>
+  <h3><b>Javascrip!
+t Capstone Project</b></h3>
 </div>
 
 # 📗 Table of Contents
@@ -139,18 +140,20 @@ You can deploy this project using:
 👤 **Author1**
 
 : Marcelo Alarcon
+
 Bolivia 💓
 
-- GitHub: [@githubhandle](https://github.com/chelobotix)
-- Twitter: [@twitterhandle](https://twitter.com/marcealarconb)
+- GitHub: [@Marcelo Alarcon](https://github.com/chelobotix)
+- Twitter: [@Marcelo Alarcon](https://twitter.com/marcealarconb)
 
 👤 **Author2**
 
 : Jakaria Jishan
+
 Bangladesh 💓
 
-- GitHub: [@githubhandle](https://github.com/JakariaJishan)
-- LinkedIn: [@githubhandle](https://www.linkedin.com/in/jakaria-jishan/)
+- GitHub: [@Jakaria Jishan](https://github.com/JakariaJishan)
+- LinkedIn: [@Jakaria Jishan](https://www.linkedin.com/in/jakaria-jishan/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -195,6 +198,6 @@ We would like to thank our family, all the partners and Microverse platform.
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT]([./LICENSE](https://github.com/chelobotix/Retro-Watchers-Capstone/blob/develop/LICENSE)) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
