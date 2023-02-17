@@ -37,7 +37,7 @@ t Capstone Project</b></h3>
 
 ## Walkthrough Video <a  name="walkthrough-video"></a>
 
-[Check the video -> coming soon](coming_soon)
+[Check the video]([Video Presentation](https://drive.google.com/file/d/1AEpZPDU_spbRA04VjtqT2W8ktxicprvQ/view?usp=share_link))
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -80,7 +80,7 @@ t Capstone Project</b></h3>
 
 ## 🧑🏻‍💻 Live Demo <a name="live-demo"></a>
 
-[Visit The Live Demo -> coming soon](coming_soon)
+[Visit The Live Demo]([Live Demo](https://chelobotix.github.io/Retro-Watchers-Capstone/dist/))
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
