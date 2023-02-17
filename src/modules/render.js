@@ -46,6 +46,7 @@ const randomMovie = () => {
     e.preventDefault();
     getMovieList().then((response) => {
       const random = Math.floor(Math.random() * response.items.length);
+      document.querySelector('section.movie').innerHTML = '';
       document.querySelector('section.movie').innerHTML = `<div class="movie">
             <img class="movie" src="https://image.tmdb.org/t/p/w300/${response.items[random].poster_path}" alt="">
             <div class="button-container">
@@ -54,17 +55,17 @@ const randomMovie = () => {
               <img class="btn-like" id="like${response.items[random].id}" src="${heart}" alt="">
             </div>
           </div>`;
-      getMovieCounter('Random Movie Generated');
+      document.querySelector('h1').textContent = '📽️ 1 Random Movies Generated 😁';
     });
   });
 };
 
-const renderMovie = (movieList, category = 0) => {
-  category = parseInt(category, 10);
+const renderMovie = async (movieList, category = 0) => {
   const sectionMovie = document.querySelector('section.movie');
-  sectionMovie.innerHTML = '';
   let aux = '';
   let categoryArray = movieList;
+  category = parseInt(category, 10);
+  sectionMovie.innerHTML = '';
   if (category !== 0) {
     categoryArray = movieList.filter((movie) => movie.genre_ids.includes(category));
   }
@@ -81,7 +82,8 @@ const renderMovie = (movieList, category = 0) => {
   renderLikes();
   sectionMovie.innerHTML = aux;
   addLike();
-  getMovieCounter('Retro Movies Found');
+  const counter = await (getMovieCounter(category));
+  document.querySelector('h1').textContent = `📽️ ${counter} Retro Movies Found 😁`;
   randomMovie();
 
   document.querySelectorAll('.btn-more-info').forEach((movie) => {
