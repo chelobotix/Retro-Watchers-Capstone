@@ -90,10 +90,6 @@ const renderMovie = (movieList, category = 0) => {
       getSingleMovie(movie.id).then((data) => {
         commentPupupHandler(data);
       });
-
-      getComments().then((comments) => {
-        displayComment(comments);
-      });
     });
   });
 };
