@@ -1,12 +1,5 @@
-import { getComments } from "./endPointAPI";
+import { getComments } from './endPointAPI.js';
 
-const commentCounter = async (id) => {
-  
-  return await getComments(id).then((comments) => comments.length);
-  
-};
+const commentCounter = async (id) => getComments(id).then((comments) => comments.length);
 
-export {
-    commentCounter
-};
-
+export default commentCounter;

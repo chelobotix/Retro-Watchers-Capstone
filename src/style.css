@@ -116,19 +116,17 @@ main section.counter h1 {
   width: 80%;
   height: 80%;
   overflow-y: scroll;
-  box-shadow: rgba(0, 0, 0, 0.50) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-
+  box-shadow: rgba(0, 0, 0, 0.5) 0 54px 55px, rgba(0, 0, 0, 0.12) 0 -12px 30px, rgba(0, 0, 0, 0.12) 0 4px 6px, rgba(0, 0, 0, 0.17) 0 12px 13px, rgba(0, 0, 0, 0.09) 0 -3px 5px;
 }
-
 
 .popup::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 .popup::-webkit-scrollbar {
   width: 6px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 .popup::-webkit-scrollbar-thumb {
@@ -167,6 +165,10 @@ main section.counter h1 {
   color: gray;
 }
 
+.more-info p {
+  font-weight: bold;
+}
+
 .genre {
   display: flex;
   gap: 10px;
@@ -187,7 +189,6 @@ main section.counter h1 {
 .release-date {
   color: gray;
   margin-bottom: 20px;
-
 }
 
 .more-info {
@@ -198,19 +199,13 @@ main section.counter h1 {
   gap: 10px;
 }
 
-.more-info p {
-  font-weight: bold;
-}
-
 .more-info span {
   margin-left: 20px;
   background-color: goldenrod;
   color: white;
   padding: 5px;
   border-radius: 5px;
-
 }
-
 
 .overview {
   width: 90%;
@@ -225,7 +220,6 @@ main section.counter h1 {
 .overview span {
   font-weight: normal;
   color: #242424;
-
 }
 
 .iframe-video {
@@ -237,7 +231,6 @@ main section.counter h1 {
 .display-comments {
   margin: 40px auto;
   width: 80%;
-
 }
 
 .comment-body {
@@ -245,7 +238,6 @@ main section.counter h1 {
   margin: 20px 0;
   margin-bottom: 20px;
   padding: 10px;
-
 }
 
 .comment-body:last-child {
@@ -270,9 +262,8 @@ main section.counter h1 {
 }
 
 form {
-  margin: 20px 0;
+  margin: 20px auto;
   max-width: 400px;
-  margin: auto;
 }
 
 form .form-group input {
@@ -300,13 +291,11 @@ form .form-group input {
   border: none;
   cursor: pointer;
   border-radius: 5px;
-
 }
 
 .form-group .comment-btn:hover {
   background-color: #520413;
 }
-
 
 main section.movie {
   width: 100%;

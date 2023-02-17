@@ -1,42 +1,83 @@
-import { commentCounter } from "./comment-counter";
-import { getComments, getTrailer, setComments } from "./endPointAPI";
+import commentCounter from './comment-counter.js';
+import { getComments, getTrailer, setComments } from './endPointAPI.js';
 
-const displayComment = (comments) => {
-  let aux = "";
-  !comments.error
-    ? comments.forEach((comment) => {
-        aux += `
-    <div class="comment-body">
-    <p class="comment-name">${comment.username}</p>
-    <p class="comment-date">${comment.creation_date}</p>
-    <p class="comment-text">${comment.comment}</p>
-    </div>
-     
-    `;
-      })
-    : [];
-  document.querySelector(".comments").innerHTML = aux;
+const displayComment = async (comments) => {
+  let aux = '';
+  if (comments.error) {
+    return [];
+  }
+  for (let i = 0; i < comments.length; i += 1) {
+    const comment = comments[i];
+    aux += `
+      <div class="comment-body">
+      <p class="comment-name">${comment.username}</p>
+      <p class="comment-date">${comment.creation_date}</p>
+      <p class="comment-text">${comment.comment}</p>
+      </div>
+      `;
+  }
+
+  document.querySelector('.comments').innerHTML = aux;
+  return aux;
+};
+const displayCommentCounter = async (counter) => {
+  if (counter) {
+    document.querySelector(
+      '.comment-counter',
+    ).innerHTML = `Comments (${counter}) `;
+  } else {
+    document.querySelector('.comment-counter').innerHTML = 'Comments 0 ';
+  }
+};
+
+const addComment = async (id) => {
+  getComments(id).then((comments) => {
+    displayComment(comments);
+  });
+
+  document.querySelector('#form').addEventListener('submit', async (e) => {
+    const comment = document.querySelector('#comment-textarea');
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    e.stopPropagation();
+    comment.focus();
+    const username = document.querySelector('input[name="username').value;
+    const comments = {
+      item_id: id,
+      username: username.toUpperCase(),
+      comment: comment.value,
+    };
+
+    await setComments(comments);
+
+    document.querySelector('input[name="username').value = '';
+    document.querySelector('#comment-textarea').value = '';
+
+    getComments(id).then((comments) => {
+      displayComment(comments);
+    });
+
+    const commentItem = await commentCounter(id).then((res) => res);
+
+    await displayCommentCounter(commentItem);
+  });
 };
 
 const commentPupupHandler = async (data) => {
-  let key = await getTrailer(data.id).then((data) => {
-    return data.results[0].key;
-  });
+  const key = await getTrailer(data.id).then((data) => data.results[0].key);
 
-  const genres = data.genres.map((gen) => {
-    return gen.name;
-  });
+  const genres = data.genres.map((gen) => gen.name);
 
-  let aux = "";
+  let aux = '';
   genres.forEach((genre) => {
     aux += `
       <p>${genre}</p>
     `;
   });
 
-  document.getElementById("popup").style.display = "block";
-  document.querySelector(".overlay").style.display = "block";
-  document.getElementById("popup-details").innerHTML = `
+  document.getElementById('popup').style.display = 'block';
+  document.querySelector('.overlay').style.display = 'block';
+  document.getElementById('popup-details').innerHTML = `
       <div class="close-popup-btn">
       <button onclick="closePopup()">&#x2715</button>
 
@@ -81,62 +122,16 @@ const commentPupupHandler = async (data) => {
         </div>
       </div>`;
 
-  document.querySelector(".genre").innerHTML = aux;
+  document.querySelector('.genre').innerHTML = aux;
   addComment(data.id);
 
-  let commentItem = await commentCounter(data.id).then((res) => {
-    return res;
-  });
+  const commentItem = await commentCounter(data.id).then((res) => res);
   await displayCommentCounter(commentItem);
 };
 
 window.closePopup = () => {
-  document.getElementById("popup").style.display = "none";
-  document.querySelector(".overlay").style.display = "none";
-};
-
-const addComment = async (id) => {
-  getComments(id).then((comments) => {
-    displayComment(comments);
-  });
-
-  document.querySelector("#form").addEventListener("submit", async (e) => {
-    let comment = document.querySelector("#comment-textarea");
-    e.preventDefault();
-    e.stopImmediatePropagation();
-    e.stopPropagation();
-    comment.focus();
-    let username = document.querySelector('input[name="username').value;
-    let comments = {
-      item_id: id,
-      username: username.toUpperCase(),
-      comment: comment.value,
-    };
-
-    await setComments(comments);
-
-    document.querySelector('input[name="username').value = "";
-    document.querySelector("#comment-textarea").value = "";
-
-    getComments(id).then((comments) => {
-      displayComment(comments);
-    });
-
-    let commentItem = await commentCounter(id).then((res) => {
-      return res;
-    });
-
-    await displayCommentCounter(commentItem);
-  });
-};
-
-const displayCommentCounter = async (counter) => {
-  counter
-    ? (document.querySelector(
-        ".comment-counter"
-      ).innerHTML = `Comments (${counter}) `)
-    : (document.querySelector(".comment-counter").innerHTML = `Comments 0 `);
+  document.getElementById('popup').style.display = 'none';
+  document.querySelector('.overlay').style.display = 'none';
 };
 
 export { commentPupupHandler, displayComment };
-

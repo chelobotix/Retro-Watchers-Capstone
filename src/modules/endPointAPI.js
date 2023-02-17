@@ -21,12 +21,12 @@ const getComments = async (id) => {
   return comments;
 };
 
-const getTrailer = async (id) =>{
+const getTrailer = async (id) => {
   const url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${apiKey}&language=en-US`;
   const response = await fetch(url);
   const trailers = await response.json();
   return trailers;
-}
+};
 
 const setComments = async (comments) => {
   const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${siteId}/comments`;
@@ -60,5 +60,6 @@ const getLike = async () => {
   return likeCounter;
 };
 
-export { getMovieList, setLike, getLike, getSingleMovie, getComments, setComments, getTrailer };
-
+export {
+  getMovieList, setLike, getLike, getSingleMovie, getComments, setComments, getTrailer,
+};
