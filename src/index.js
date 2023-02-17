@@ -1,6 +1,4 @@
 import './style.css';
+import renderList from './modules/render.js';
 
-const fun = () => {
-  // document.querySelector('#gaia').src = "./assets/images/gaia.png"
-};
-fun();
+renderList();

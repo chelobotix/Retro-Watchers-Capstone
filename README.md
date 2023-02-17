@@ -1,28 +1,28 @@
-<a name="readme-top"></a>
+# Javascript Capstone Project with Kanban Board
 
 <div align="center">
-
-  <img src="src/assets/images/webpacklogo.png" alt="logo" width="400"  height="auto" />
-  <br/>
-  <img src="src/assets/images/chelobotix_logo.png" alt="logo" width="300"  height="auto" />
-  <br/>
-  <img src="src/assets/images/2.gif" alt="logo" />
+  <img  src="https://user-images.githubusercontent.com/73704727/219734782-d4ff2c5f-a431-4894-b7f8-9f92f5b1bc65.png" alt="logo" width="1080"  height="auto" />
   <br/>
 
-  <h3><b>Webpack Template</b></h3>
-
+  <h3><b>Javascrip!
+t Capstone Project</b></h3>
 </div>
 
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
+  - [Walkthrough Video](#walkthrough-video)
   - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
+  - [Tech Stack](#tech-stack)
+  - [Key Features](#key-features)
 - [🧑🏻‍💻 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Clone](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -31,11 +31,22 @@
 - [❓ FAQ](#faq)
 - [📝 License](#license)
 
-# 📖 WebPack Template<a name="about-project"></a>
+# 📖 Javascript Capstone Project <a name="about-project"></a>
 
-> Leaderboard App developed with html, css, js and webpack
+> Javascript Capstone Project is a website based on an external API. It uses [The Movie Db Api](https://developers.themoviedb.org/3/genres/get-movie-list) to get info about different characters, and [Involvement API](https://www.notion.so/Involvement-API-869e60b5ad104603aa6db59e08150270) to store likes and comments from users.
+
+## Walkthrough Video <a  name="walkthrough-video"></a>
+
+[Check the video]([Video Presentation](https://drive.google.com/file/d/1AEpZPDU_spbRA04VjtqT2W8ktxicprvQ/view?usp=share_link))
 
 ## 🛠 Built With <a name="built-with"></a>
+
+- Visual Studio Code
+- HTML
+- CSS
+- Javascript
+- Github
+- Kanban Board
 
 ### Tech Stack <a name="tech-stack"></a>
 
@@ -44,80 +55,120 @@
   <ul>
     <li><a href="https://en.wikipedia.org/wiki/HTML">Html</a></li>
     <li><a href="https://en.wikipedia.org/wiki/CSS">Css</a></li>
-    <li><a href="https://en.wikipedia.org/wiki/JavaScript">Vanilla Javascript</a></li>
-    <li><a href="https://webpack.js.org/">Webpack</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/CSS">Javascript</a></li>
   </ul>
 </details>
 
 <!-- Features -->
 
-### Key Features <a name="key-features"></a>
+#### Key Features <a name="key-features"></a>
 
-- **Html Loader**
-- **Css Loader**
-- **Html <img> Loader**
-- **Font Loader**
-
+ <ul>
+  <li>HTML Interface with CSS (Desktop / mobile)</li>
+  <li>JavaScript</li>
+  <li>Webpack</li>
+  <li>ES6</li>
+  <li>Callbacks and Promises</li>
+  <li>AAA pattern for unit tests</li>
+  <li>Follow Gitflow</li>
+  <li>Solve simple git conflicts</li>
+  <li>Send and receive data from an API, using API documentation</li>
+  <li>JavaScript code asynchronous</li>
+  <li>Kanban board</li>
+ </ul>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🧑🏻‍💻 Live Demo <a name="live-demo"></a>
 
-<a href="https://chelobotix.github.io/Webpack-template//dist/">Visit the Live Demo</a>
-<br/>
+[Visit The Live Demo]([Live Demo](https://chelobotix.github.io/Retro-Watchers-Capstone/dist/))
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-To get a local copy up and use as a template for your own site, follow these steps.
+To get a local copy up and use as a template for your own portafolio site, follow these steps.
+
+### Prerequisites
+
+In order to run this project you need: git installed in your system
 
 ### Clone
 
 Clone this repository to your desired folder:
 
 ```sh
-  https://github.com/chelobotix/Leaderboard-Chelobotix.git
+  git clone https://github.com/chelobotix/Retro-Watchers-Capstone.git
 ```
 
-### Prerequisites
+### Install
 
-In order to run this project you need: Git and Nodejs installed in your system and Webpack knowledge<br/>
-Please Install all NPM dependecies needed:
+Install this project with:
 
 ```sh
-npm install
+  npm init -y
+  npm install
 ```
 
-Run the app with:
+### Usage
+
+To run the project, execute the following command:
 
 ```sh
-npm start
+  npm start
+```
+
+### Run tests
+
+To run tests, run the following command:
+
+```sh
+  npm test
+```
+
+### Deployment
+
+You can deploy this project using:
+
+```sh
+  npm run build
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- AUTHOR -->
+<!-- AUTHORS -->
 
 ## 👥 Author <a name="authors"></a>
 
 👤 **Author1**
 
-: Marcelo Alarcon Barrenechea
+: Marcelo Alarcon
 
-🇧🇴 Bolivia 💓
+Bolivia 💓
 
-- GitHub: [@chelobotix](https://github.com/chelobotix)
-- Linkedin: [Marcelo Alarcon](https://www.linkedin.com/in/marceloalarconb/)
+- GitHub: [@Marcelo Alarcon](https://github.com/chelobotix)
+- Twitter: [@Marcelo Alarcon](https://twitter.com/marcealarconb)
+
+👤 **Author2**
+
+: Jakaria Jishan
+
+Bangladesh 💓
+
+- GitHub: [@Jakaria Jishan](https://github.com/JakariaJishan)
+- LinkedIn: [@Jakaria Jishan](https://www.linkedin.com/in/jakaria-jishan/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **More config**
+<ul>
+  <li>Add Reservations Popup</li>
+</ul>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
+Feel free to check the [issues page](https://github.com/chelobotix/Retro-Watchers-Capstone/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -129,23 +180,24 @@ If you like this project please let me know
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-My mother. Let's play to the end together ❤️ with 🧠
-<br/>
+We would like to thank our family, all the partners and Microverse platform.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## ❓ FAQ <a name="faq"></a>
 
-- **Is there any restriction to adapting the template to other porpouse??**
+- **is there any restriction to put my name instead of the original author's name?**
 
-  - No problem.
+  - You can delete my name and put yours without any problem.
+
+- **Can I change the original colors or assign a new color palette?**
+
+  - Yeah, no problem
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](<a href="https://github.com/chelobotix/Leaderboard-Chelobotix/blob/api-request/LICENSE">License</a>) licensed.
-
-<a href="https://github.com/chelobotix/Leaderboard-Chelobotix/blob/api-request/LICENSE">License</a>
+This project is [MIT](https://github.com/chelobotix/Retro-Watchers-Capstone/blob/develop/LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
