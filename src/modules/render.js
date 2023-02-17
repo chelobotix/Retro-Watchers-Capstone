@@ -5,7 +5,8 @@ import {
   getMovieList,
   getSingleMovie, setLike,
 } from './endPointAPI.js';
-import { commentPupupHandler } from './popup-comments';
+import { commentPupupHandler } from './popup-comments.js';
+import getMovieCounter from './movieCounter.js';
 
 const updateLike = (movieId) => {
   getLike().then((response) => {
@@ -24,6 +25,36 @@ const addLike = () => {
       setLike(movieId).then(() => {
         updateLike(movieId);
       });
+    });
+  });
+};
+
+const renderLikes = () => {
+  getLike().then((response) => {
+    document.querySelectorAll('.btn-like').forEach((btnLike) => {
+      response.forEach((like) => {
+        if (btnLike.id.slice(4) === like.item_id) {
+          document.querySelector(`#counter${like.item_id}`).textContent = like.likes;
+        }
+      });
+    });
+  });
+};
+
+const randomMovie = () => {
+  document.querySelector('#randomMovie').addEventListener('click', (e) => {
+    e.preventDefault();
+    getMovieList().then((response) => {
+      const random = Math.floor(Math.random() * response.items.length);
+      document.querySelector('section.movie').innerHTML = `<div class="movie">
+            <img class="movie" src="https://image.tmdb.org/t/p/w300/${response.items[random].poster_path}" alt="">
+            <div class="button-container">
+              <img class="btn-more-info" id="${response.items[random].id}" src="${moreInfo}" alt="">
+              <p class="like-counter" id="counter${response.items[random].id}">0</p>
+              <img class="btn-like" id="like${response.items[random].id}" src="${heart}" alt="">
+            </div>
+          </div>`;
+      getMovieCounter('Random Movie Generated');
     });
   });
 };
@@ -47,22 +78,11 @@ const renderMovie = (movieList, category = 0) => {
             </div>
           </div>`;
   });
-
-  getLike().then((response) => {
-    let counter = 0;
-    document.querySelectorAll('.btn-like').forEach((btnLike) => {
-      counter += 1;
-      response.forEach((like) => {
-        if (btnLike.id.slice(4) === like.item_id) {
-          document.querySelector(`#counter${like.item_id}`).textContent = like.likes;
-        }
-      });
-    });
-    document.querySelector('h1').textContent = `📽️ ${counter} Retro Movies Found 😁`;
-  });
-
+  renderLikes();
   sectionMovie.innerHTML = aux;
   addLike();
+  getMovieCounter('Retro Movies Found');
+  randomMovie();
 
   document.querySelectorAll('.btn-more-info').forEach((movie) => {
     document.getElementById('popup').style.display = 'none';
@@ -81,7 +101,6 @@ const renderMovie = (movieList, category = 0) => {
 const sortByCategory = () => {
   const formSearch = document.querySelector('form.search');
   formSearch.addEventListener('submit', (e) => {
-    console.log(formSearch.elements.selectCategory.value);
     e.preventDefault();
     getMovieList().then((response) => {
       renderMovie(response.items, formSearch.elements.selectCategory.value);
