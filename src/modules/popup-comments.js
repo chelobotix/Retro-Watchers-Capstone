@@ -1,8 +1,8 @@
-import commentCounter from "./comment-counter.js";
-import { getComments, getTrailer, setComments } from "./endPointAPI.js";
+import commentCounter from './comment-counter.js';
+import { getComments, getTrailer, setComments } from './endPointAPI.js';
 
 const displayComment = async (comments) => {
-  let aux = "";
+  let aux = '';
   if (comments.error) {
     return [];
   }
@@ -17,16 +17,16 @@ const displayComment = async (comments) => {
       `;
   }
 
-  document.querySelector(".comments").innerHTML = aux;
+  document.querySelector('.comments').innerHTML = aux;
   return aux;
 };
 const displayCommentCounter = async (counter) => {
   if (counter) {
     document.querySelector(
-      ".comment-counter"
+      '.comment-counter',
     ).innerHTML = `Comments (${counter}) `;
   } else {
-    document.querySelector(".comment-counter").innerHTML = "Comments 0 ";
+    document.querySelector('.comment-counter').innerHTML = 'Comments 0 ';
   }
 };
 
@@ -35,8 +35,8 @@ const addComment = async (id) => {
     displayComment(comments);
   });
 
-  document.querySelector("#form").addEventListener("submit", async (e) => {
-    const comment = document.querySelector("#comment-textarea");
+  document.querySelector('#form').addEventListener('submit', async (e) => {
+    const comment = document.querySelector('#comment-textarea');
     e.preventDefault();
     e.stopImmediatePropagation();
     e.stopPropagation();
@@ -50,8 +50,8 @@ const addComment = async (id) => {
 
     await setComments(comments);
 
-    document.querySelector('input[name="username').value = "";
-    document.querySelector("#comment-textarea").value = "";
+    document.querySelector('input[name="username').value = '';
+    document.querySelector('#comment-textarea').value = '';
 
     getComments(id).then((comments) => {
       displayComment(comments);
@@ -68,16 +68,16 @@ const commentPupupHandler = async (data) => {
 
   const genres = data.genres.map((gen) => gen.name);
 
-  let aux = "";
+  let aux = '';
   genres.forEach((genre) => {
     aux += `
       <p>${genre}</p>
     `;
   });
 
-  document.getElementById("popup").style.display = "block";
-  document.querySelector(".overlay").style.display = "block";
-  document.getElementById("popup-details").innerHTML = `
+  document.getElementById('popup').style.display = 'block';
+  document.querySelector('.overlay').style.display = 'block';
+  document.getElementById('popup-details').innerHTML = `
       <div class="close-popup-btn">
       <button onclick="closePopup()">&#x2715</button>
 
@@ -92,8 +92,7 @@ const commentPupupHandler = async (data) => {
               <p class="release-date">Release date: ${data.release_date}</p>
               <div class="genre"></div>
               <div class="more-info">
-                <p>IMDb: <span>
-                ${data.vote_average}</span></p>
+                <p>IMDb: <span>${data.vote_average}</span></p>
                 <p>${data.vote_count} votes</p>
               </div>
             </div>
@@ -122,7 +121,7 @@ const commentPupupHandler = async (data) => {
         </div>
       </div>`;
 
-  document.querySelector(".genre").innerHTML = aux;
+  document.querySelector('.genre').innerHTML = aux;
   addComment(data.id);
 
   const commentItem = await commentCounter(data.id).then((res) => res);
@@ -130,8 +129,8 @@ const commentPupupHandler = async (data) => {
 };
 
 window.closePopup = () => {
-  document.getElementById("popup").style.display = "none";
-  document.querySelector(".overlay").style.display = "none";
+  document.getElementById('popup').style.display = 'none';
+  document.querySelector('.overlay').style.display = 'none';
 };
 
 export { commentPupupHandler, displayComment };
