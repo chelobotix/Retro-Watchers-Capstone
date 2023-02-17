@@ -3,7 +3,7 @@ import moreInfo from '../assets/images/more-info.png';
 import {
   getLike,
   getMovieList,
-  getSingleMovie, setLike,
+  getSingleMovie, setLike
 } from './endPointAPI.js';
 import { commentPupupHandler } from './popup-comments';
 
@@ -71,9 +71,6 @@ const renderMovie = (movieList, category = 0) => {
         commentPupupHandler(data);
       });
 
-      getComments().then((comments) => {
-        displayComment(comments);
-      });
     });
   });
 };
