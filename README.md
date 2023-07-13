@@ -80,7 +80,7 @@ t Capstone Project</b></h3>
 
 ## 🧑🏻‍💻 Live Demo <a name="live-demo"></a>
 
-[Visit The Live Demo]([Live Demo](https://chelobotix.github.io/Retro-Watchers-Capstone/dist/))
+[Visit The Live Demo]([Live Demo](https://thunderous-dasik-81b884.netlify.app/))
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
